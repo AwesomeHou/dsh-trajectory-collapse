@@ -6,18 +6,21 @@ workflow runs) while **always keeping the agent's final output visible**.
 
 ## Features
 
-- **折叠 Agent 轨迹 / Collapse the agent trajectory** — each completed turn can be
-  collapsed to show only the user prompt + the agent's final answer. A per-turn
-  `折叠轨迹 / 展开轨迹` control sits on every finalized assistant message.
+- **折叠 Agent 轨迹 / Collapse the agent trajectory** — collapse is **per-turn**:
+  each completed agent output gets a small, restrained toggle at its **top**
+  (`展开轨迹 / 折叠轨迹`) so you control each turn individually. The toggle
+  sits above the trajectory and below the user message; it only appears on
+  turns that actually have a trajectory to collapse.
 - **始终保留最终输出 / Final output is always kept** — even when collapsed, the
   user message and the closing assistant output stay on screen; only the
   intermediate trajectory is hidden.
-- **Session header toggle** — a `折叠全部轨迹 / 展开全部轨迹 / 恢复默认` button in the
-  session header collapses or expands every completed turn at once.
+- **Collapsible trajectory kinds** — tool calls (`tool-call`), thinking steps
+  (non-final `assistant-step`), steering, workflow runs, context-injection rows
+  (`context`, e.g. system prompt / skill catalog), and unknown rows.
 - **Settings** — in Settings → General there is a checkbox
   **最终输出完毕后默认折叠 Agent 轨迹** (default-collapse after the final output
   completes). It is **checked by default**. Unchecking it keeps trajectories
-  expanded until you collapse them manually.
+  expanded until you expand/collapse them per turn.
 
 ## How it works
 
@@ -28,8 +31,7 @@ The plugin is a permanent bundle installed into the `web` profile:
 - `lib/client.js` — the browser half. It observes the chat flow
   (`[data-chat-flow]`), groups flow items into turns, and marks trajectory
   nodes with a `data-dsh-traj` attribute. Injected CSS hides marked nodes.
-  It also registers the settings row, the session-header toggle, and the
-  per-turn control.
+  It also registers the settings row and injects the per-turn top toggle.
 
 ## Install
 
