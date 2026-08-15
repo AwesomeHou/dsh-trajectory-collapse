@@ -7,6 +7,19 @@ output visible**.
 
 中文说明: [README.md](README.md)
 
+## Demo
+
+![Before / After](docs/before-after.gif)
+
+Before collapsing, the full agent trajectory (thinking, tool calls, context
+injection) is visible; click the 「折叠轨迹」 toggle at the top of the trajectory
+and only the user prompt plus the agent's final output remain — expand it back
+anytime.
+
+| Before (trajectory expanded) | After (final output only) |
+| --- | --- |
+| ![Before](docs/before.png) | ![After](docs/after.png) |
+
 ## Features
 
 - **Per-turn trajectory collapse** — collapsing works **per turn**: every
@@ -25,6 +38,8 @@ output visible**.
   completes). It is **checked by default**. Unchecking it keeps trajectories
   expanded until you collapse them per turn.
 
+![Settings: default-collapse after final output](docs/setting.png)
+
 ## How it works
 
 The plugin is a permanent bundle installed into the `web` profile:
@@ -38,14 +53,21 @@ The plugin is a permanent bundle installed into the `web` profile:
 
 ## Install
 
-From a DeepSeek Harness checkout (profile `web`):
+**Option 1** — from a DeepSeek Harness checkout (profile `web`):
 
 ```
 dsh plugin --profile web add <this-repo-path>
 ```
 
-Then restart the harness. Or install from the marketplace (`market_install` with
-this repo).
+Then restart the harness.
+
+**Option 2** — just ask your agent to install it:
+
+```
+帮我安装这个插件：https://github.com/AwesomeHou/dsh-trajectory-collapse
+```
+
+**Option 3** — install the marketplace first: https://github.com/AwesomeHou/dsh-plugin-marketplace , then search and install it from the marketplace, which also tracks future updates.
 
 ## Development
 
