@@ -1,0 +1,13 @@
+# dsh-trajectory-collapse bundle patch layer.
+#
+# This bundle contributes one host row: the plugin's own package. The Loader
+# imports `dsh-trajectory-collapse` (resolved from the profile's node_modules
+# after `dsh plugin --profile web add`), which runs the Host half — a no-op
+# plugin whose only job is to make the row loadable.
+#
+# client-modules independently scans this same loader entry for a package that
+# declares `dsh.client` and exports `./client`, which is how the browser half
+# (the trajectory collapse UI) is discovered and injected into the boot graph.
+- insert:
+    - id: trajectory-collapse
+      name: dsh-trajectory-collapse
