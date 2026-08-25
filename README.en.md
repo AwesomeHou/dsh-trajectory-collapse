@@ -12,7 +12,7 @@ output visible**.
 ![Before / After](docs/before-after.gif)
 
 Before collapsing, the full agent trajectory (thinking, tool calls, context
-injection) is visible; click the 「折叠轨迹」 toggle at the top of the trajectory
+injection) is visible; click the "Collapse trajectory" toggle at the top of the trajectory
 and only the user prompt plus the agent's final output remain — expand it back
 anytime.
 
@@ -23,7 +23,7 @@ anytime.
 ## Features
 
 - **Per-turn trajectory collapse** — collapsing works **per turn**: every
-  completed agent output gets a small, restrained `展开轨迹 / 折叠轨迹`
+  completed agent output gets a small, restrained `Expand trajectory / Collapse trajectory`
   toggle at its **top** (below the user message, above the trajectory), so you
   control each turn individually. It only appears on turns that actually have a
   trajectory to collapse.
@@ -34,7 +34,7 @@ anytime.
   (non-final `assistant-step`), steering, workflow runs, context-injection rows
   (`context`, e.g. system prompt / skill catalog), and unknown rows.
 - **Settings** — in Settings → General there is a checkbox
-  **最终输出完毕后默认折叠 Agent 轨迹** (default-collapse after the final output
+  **Collapse agent trajectory by default after final output** (default-collapse after the final output
   completes). It is **checked by default**. Unchecking it keeps trajectories
   expanded until you collapse them per turn.
 
