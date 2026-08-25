@@ -1,7 +1,7 @@
 {
-  "name": "dsh-trajectory-collapse",
+  "name": "dsh-trace-collapse",
   "version": "0.1.0",
-  "description": "DeepSeek Harness web GUI: collapse the agent trajectory (tool calls, thinking, workflow steps) while always keeping the agent's final output. A setting controls whether the trajectory is default-collapsed after the final output completes (default on).",
+  "description": "DeepSeek Harness web GUI: collapse the agent trace (tool calls, thinking, workflow steps) while always keeping the agent's final output. A setting controls whether the trace is default-collapsed after the final output completes (default on).",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -32,7 +32,7 @@
   "keywords": [
     "dsh",
     "dsh-plugin",
-    "trajectory",
+    "trace",
     "collapse",
     "deepseek-harness"
   ],
